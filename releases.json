@@ -1,0 +1,38 @@
+{
+    "ORDS": [
+        "latest": "https://download.oracle.com/otn_software/java/ords/ords-23.3.0.289.1830.zip",
+        "23.3.0": "https://download.oracle.com/otn_software/java/ords/ords-23.3.0.289.1830.zip",
+        "23.2.3": "https://download.oracle.com/otn_software/java/ords/ords-23.2.3.242.1937.zip",
+        "23.2.2": "https://download.oracle.com/otn_software/java/ords/ords-23.2.2.208.1534.zip",
+        "23.2.1": "https://download.oracle.com/otn_software/java/ords/ords-23.2.1.200.1208.zip",
+        "23.2.0": "https://download.oracle.com/otn_software/java/ords/ords-23.2.0.177.0931.zip",
+        "23.1.4": "https://download.oracle.com/otn_software/java/ords/ords-23.1.4.150.1808.zip",
+        "23.1.3": "https://download.oracle.com/otn_software/java/ords/ords-23.1.3.137.1032.zip",
+        "23.1.2": "https://download.oracle.com/otn_software/java/ords/ords-23.1.2.115.1944.zip",
+        "23.1.1": "https://download.oracle.com/otn_software/java/ords/ords-23.1.1.109.1003.zip",
+        "23.1.0": "https://download.oracle.com/otn_software/java/ords/ords-23.1.0.086.1423.zip",
+        "23.4.4": "https://download.oracle.com/otn_software/java/ords/ords-22.4.4.041.1526.zip",
+        "23.4.3": "https://download.oracle.com/otn_software/java/ords/ords-22.4.3.033.1239.zip",
+        "22.2.0": "https://download.oracle.com/otn_software/java/ords/ords-22.2.0.172.1758.zip",
+        "22.1.1": "https://download.oracle.com/otn_software/java/ords/ords-22.1.1.133.1148.zip",
+        "22.1.0": "https://download.oracle.com/otn_software/java/ords/ords-22.1.0.105.1723.zip",
+        "21.4.3": "https://download.oracle.com/otn_software/java/ords/ords-21.4.3.117.0405.zip",
+        "21.4.2": "https://download.oracle.com/otn_software/java/ords/ords-21.4.2.062.1806.zip",
+        "21.4.1": "https://download.oracle.com/otn_software/java/ords/ords-21.4.1.025.0904.zip",
+        "21.4.0": "https://download.oracle.com/otn_software/java/ords/ords-21.4.0.348.1956.zip",
+        "21.3.1": "https://download.oracle.com/otn_software/java/ords/ords-21.3.1.301.2050.zip",
+        "21.3.0": "https://download.oracle.com/otn_software/java/ords/ords-21.3.0.266.1100.zip",
+        "21.2.4": "https://download.oracle.com/otn_software/java/ords/ords-21.2.4.243.1032.zip",
+        "21.2.0": "https://download.oracle.com/otn_software/java/ords/ords-21.2.0.174.1826.zip"
+    ],
+    "SQLcl": [
+        "latest": "https://download.oracle.com/otn_software/java/ords/ords-23.3.0.289.1830.zip",
+        "23": "https://download.oracle.com/otn_software/java/ords/ords-23.3.0.289.1830.zip",
+        "23.3": "https://download.oracle.com/otn_software/java/ords/ords-23.3.0.289.1830.zip",
+        "23.3.0": "https://download.oracle.com/otn_software/java/ords/ords-23.3.0.289.1830.zip",
+        "23.2": "https://download.oracle.com/otn_software/java/ords/ords-23.2.3.242.1937.zip",
+        "23.2.3": "https://download.oracle.com/otn_software/java/ords/ords-23.2.3.242.1937.zip",
+        "23.2.2": "https://download.oracle.com/otn_software/java/ords/ords-23.2.2.208.1534.zip",
+        "23.2.1": "https://download.oracle.com/otn_software/java/ords/ords-23.2.1.200.1208.zip"
+    ]
+}
