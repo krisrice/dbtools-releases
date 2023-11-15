@@ -25,10 +25,10 @@ downloadSQLcl(){
   version=$1
   link=$2
 
-    # Set the stage directory
-  STAGE_DIR=/var/tmp/sqlcl/${version}
-
+  # Set the stage directory
+  STAGE_DIR=/tmp/sqlcl/${version}/
   mkdir -p ${STAGE_DIR}
+
   # Check whether internet connection exists
   if ping -c 1 -W 3 download.oracle.com > /dev/null; then
 
@@ -37,18 +37,18 @@ downloadSQLcl(){
     # Get current ETAG from download
     ETAG=$(curl -I -s $link | tr -d '\r'  | sed -En 's/^ETag: (.*)/\1/p')
 
-    echo "REMOTE-ETAG: $ETAG"
+    #echo "REMOTE-ETAG: $ETAG"
 
     # Compare to last ETag saved
     if [[ -e $STAGE_DIR/sqlcl.etag ]]; then
         CURRENT_ETAG=$(cat $STAGE_DIR/sqlcl.etag)
-        echo "LOCAL-ETAG: $CURRENT_ETAG"
+        #echo "LOCAL-ETAG: $CURRENT_ETAG"
     else
         CURRENT_ETAG="none"
     fi
 
     FILENAME=$(basename ${link})
-    echo $FILENAME
+    #echo $FILENAME
     # Check if ETags match
     if [[ "$ETAG" != "$CURRENT_ETAG" ]]; then
       echo "⬇️  Downloading ${version} SQLcl..."
@@ -56,7 +56,7 @@ downloadSQLcl(){
             --header "If-None-Match: ${CURRENT_ETAG}" \
             ${link}
       echo "🧹 Removing old SQLcl"
-      rm -rf $STAGE_DIR
+      rm -rf $STAGE_DIR/sqlcl
       echo "🗜️  Unzipping latest SQLcl to $STAGE_DIR"
       unzip   -qq -d $STAGE_DIR $STAGE_DIR/${FILENAME}
       echo "$ETAG" > $STAGE_DIR/sqlcl.etag
@@ -77,9 +77,6 @@ downloadSQLcl(){
   ret_val=$STAGE_DIR
 }
 
-
-
-
 sql() {
   # Remote source this script
   #
@@ -88,10 +85,11 @@ sql() {
   version="latest"
   for var in "$@"; do
     case $var in
-      "-r") release=true ;&  # And you can go on
+      "-r") release=true ;;  # get next arg as the release
       *)
         if [[ "$release" == "true" ]]; then
           version=$var
+          release=false
         else
           new_args+=($var)
         fi
@@ -111,7 +109,7 @@ sql() {
     LINK=$(curl ${RELEASES} jq -r --arg VERSION "$version" '.SQLcl[] | select(.version=="\($VERSION)").link')
   fi 
   
-  echo -e "🤷 Available Versions:\n ${VERSIONS}"
+  echo -e "🤷 Available Versions:\n${VERSIONS}"
 
   STAGE_DIR=xx
   downloadSQLcl ${version} ${LINK}
@@ -122,5 +120,5 @@ sql() {
    # Run SQLcl
    echo "🚀 Launching SQLcl..."
    #$STAGE_DIR/sqlcl/bin/sql "$@"
-   $STAGE_DIR/sqlcl/bin/sql ${new_args[*]}
+    $STAGE_DIR/sqlcl/bin/sql ${new_args[*]}
 }
