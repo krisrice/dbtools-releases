@@ -80,7 +80,7 @@ downloadSQLcl(){
 sql() {
   # Remote source this script
   #
-  # . <(curl -s https://raw.githubusercontent.com/gvenzl/oracle-tools/main/sqlcl/sql)
+  # . <(curl -s https://raw.githubusercontent.com/krisrice/dbtools-releases/main/sql)
   new_args=()
   version="latest"
   for var in "$@"; do
