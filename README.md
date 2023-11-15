@@ -4,6 +4,11 @@
 
 `sql` is a helper bash function for launching versions of sqlcl or always the latest version. This can be sourced into the current shell to load the helper.
 
+To source into your shell directly from the repo.
+```
+. <(curl -s https://raw.githubusercontent.com/krisrice/dbtools-releases/main/sql)
+```
+
 `sql` run with no extra arguments will always load the most current released version.
 
 `🤷 Available Versions:` will list versions at the start of the tool.
